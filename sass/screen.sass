@@ -1,7 +1,71 @@
-/*
-  Welcome to Compass.
-  In this file you should write your main styles. (or centralize your imports)
-  Import this file using the following HTML or equivalent:
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+@import "zen"
+$zen-gutter-width: 16px
+$zen-column-count: 24
+$zen-auto-include-item-base: false
+$zen-auto-include-flow-item-base: false
+$zen-grid-width: 992px
+$gel-grid-margin: 8px
 
-@import compass/reset
+#container
+	@include zen-grid-container
+	margin: 0 auto
+	padding: 0 $gel-grid-margin
+	width: $zen-grid-width
+	div
+		@include zen-grid-item-base
+		background: blue
+		height: 100px
+
+#fullwidth
+	background: red
+	height: 100px
+	@include zen-grid-item(24, 1)
+
+.col-1
+	@include zen-grid-item(1, 1)
+.col-2
+	@include zen-grid-item(1, 2)
+.col-3
+	@include zen-grid-item(1, 3)
+.col-4
+	@include zen-grid-item(1, 4)
+.col-5
+	@include zen-grid-item(1, 5)
+.col-6
+	@include zen-grid-item(1, 6)
+.col-7
+	@include zen-grid-item(1, 7)
+.col-8
+	@include zen-grid-item(1, 8)
+.col-9
+	@include zen-grid-item(1, 9)
+.col-10
+	@include zen-grid-item(1, 10)
+.col-11
+	@include zen-grid-item(1, 11)
+.col-12
+	@include zen-grid-item(1, 12)
+.col-13
+	@include zen-grid-item(1, 13)
+.col-14
+	@include zen-grid-item(1, 14)
+.col-15
+	@include zen-grid-item(1, 15)
+.col-16
+	@include zen-grid-item(1, 16)
+.col-17
+	@include zen-grid-item(1, 17)
+.col-18
+	@include zen-grid-item(1, 18)
+.col-19
+	@include zen-grid-item(1, 19)
+.col-20
+	@include zen-grid-item(1, 20)
+.col-21
+	@include zen-grid-item(1, 21)
+.col-22
+	@include zen-grid-item(1, 22)
+.col-23
+	@include zen-grid-item(1, 23)
+.col-24
+	@include zen-grid-item(1, 24)
