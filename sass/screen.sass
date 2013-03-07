@@ -6,19 +6,27 @@ $zen-auto-include-flow-item-base: false
 $gel-grid-margin: 0
 $zen-grid-width: 100%
 
+body
 #container
 	@include zen-grid-container
 	margin: 0 auto
+	background: #97bbc4
 	padding: 0 $gel-grid-margin
 
 .grid-item
-	background: blue
-	height: 100px
+	background: #eed6df
+	span
+		background: #d7a0b5
+		display: block
+		height: 100px
 
 #nav
 	height: auto
-	background: gray
 	margin-bottom: 10px
+	h1
+		background: #d7a0b5
+		margin: 0
+		height: 50px
 
 @media all and (max-width: 399px)
 	.grid-item
