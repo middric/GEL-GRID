@@ -11,17 +11,25 @@ $gel-grid-margin: 8px
 	margin: 0 auto
 	padding: 0 $gel-grid-margin
 	width: $zen-grid-width
-	div
-		@include zen-grid-item-base
-		background: blue
-		height: 100px
+
+.grid-item
+	@include zen-grid-item-base
+	background: blue
+	height: 100px
 
 #fullwidth
 	background: red
 	height: 100px
 	@include zen-grid-item(24, 1)
 
+#nav
+	@include zen-grid-item(24, 1)
+	height: auto
+	background: gray
+	margin-bottom: 10px
+
 .col-1
+	@include zen-clear
 	@include zen-grid-item(1, 1)
 .col-2
 	@include zen-grid-item(1, 2)
@@ -68,4 +76,4 @@ $gel-grid-margin: 8px
 .col-23
 	@include zen-grid-item(1, 23)
 .col-24
-	@include zen-grid-item(1, 24)
+	@include zen-grid-item(1, 1, right)
