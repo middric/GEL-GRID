@@ -1,0 +1,75 @@
+@import "zen"
+// Setup zen grid variables
+$zen-gutter-width: 8px
+$zen-column-count: 12
+$zen-auto-include-item-base: false
+$zen-auto-include-flow-item-base: false
+$gel-grid-margin: 8px
+$zen-grid-width: 100%
+
+// Setup the grid container
+#container
+	@include zen-grid-container
+	padding: 0 $gel-grid-margin
+
+// Setup grid items
+.grid-item
+	@include zen-grid-item-base
+
+// Apply fixed GEL margins (padding used for this purpose)
+#container
+	padding: 0 $gel-grid-margin - ($zen-gutter-width/2)
+
+// Set the nav as a 12 column grid item
+#nav	
+	@include zen-grid-item(12, 1)
+
+// Iterate over each column and set their positions
+.col-1
+	@include zen-clear
+@for $i from 1 through 12
+	.col-#{$i}
+		@include zen-grid-item(1, $i)
+@for $i from 13 through 24
+	.col-#{$i}
+		display: none
+
+// Define guttering and fixed margins for Group 2
+@media all and (min-width: 400px) and (max-width: 599px)
+	$zen-gutter-width: 8px
+	$gel-grid-margin: 16px
+	.grid-item
+		@include zen-grid-item-base
+	#container
+		padding: 0 $gel-grid-margin - ($zen-gutter-width/2)
+
+// Define guttering and fixed margins for Group 3
+@media all and (min-width: 600px) and (max-width: 1007px)
+	$zen-gutter-width: 16px
+	$gel-grid-margin: 16px
+	.grid-item
+		@include zen-grid-item-base
+	#container
+		padding: 0 $gel-grid-margin - ($zen-gutter-width/2)
+
+// Moce to a 24 column grid and define guttering and fixed margins for Group 4
+@media all and (min-width: 1008px)
+	$zen-column-count: 24
+	$zen-grid-width: 992px
+	$gel-grid-margin: 8px
+	.grid-item
+		@include zen-grid-item-base
+	#container
+		width: $zen-grid-width
+		padding: 0 $gel-grid-margin
+	#nav	
+		@include zen-grid-item(24, 1)
+	@for $i from 1 through 23
+		.col-#{$i}
+			display: block
+			@include zen-grid-item(1, $i)
+	.col-24
+		display: block
+		@include zen-grid-item(1, 1, right)
+
+@import "_gelStyles"
