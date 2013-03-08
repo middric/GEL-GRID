@@ -1,0 +1,20 @@
+#programme-finder	
+	@include zen-clear
+	@include zen-grid-item(12, 1)
+	.inner
+		background: gray
+
+#recent-activity
+	@include zen-clear
+	@include zen-grid-item(6, 1)
+
+ul
+	padding: 0
+
+li.grid-item
+	display: block
+	@include zen-grid-item(6, 7)
+
+li.grid-item:nth-child(even)
+	@include zen-clear
+	@include zen-grid-item(6, 1)

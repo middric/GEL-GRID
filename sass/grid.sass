@@ -35,6 +35,10 @@ $zen-grid-width: 100%
 		display: none
 
 // Define guttering and fixed margins for Group 2
+@media all and (max-width: 399px)
+	@import "_1"
+
+// Define guttering and fixed margins for Group 2
 @media all and (min-width: 400px) and (max-width: 599px)
 	$zen-gutter-width: 8px
 	$gel-grid-margin: 16px
@@ -42,6 +46,7 @@ $zen-grid-width: 100%
 		@include zen-grid-item-base
 	#container
 		padding: 0 $gel-grid-margin - ($zen-gutter-width/2)
+	@import "_2"
 
 // Define guttering and fixed margins for Group 3
 @media all and (min-width: 600px) and (max-width: 1007px)
@@ -51,6 +56,7 @@ $zen-grid-width: 100%
 		@include zen-grid-item-base
 	#container
 		padding: 0 $gel-grid-margin - ($zen-gutter-width/2)
+	@import "_3"
 
 // Moce to a 24 column grid and define guttering and fixed margins for Group 4
 @media all and (min-width: 1008px)

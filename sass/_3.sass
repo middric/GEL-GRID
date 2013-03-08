@@ -1,0 +1,27 @@
+#programme-finder
+	@include zen-clear
+	@include zen-grid-item(8, 1)
+	.inner
+		background: gray
+
+#recent-activity
+	@include zen-grid-item(4, 9)
+	.inner
+		background: gray
+
+ul
+	padding: 0
+	
+li.grid-item:nth-child(3n+1)
+	display: block
+	@include zen-clear
+	@include zen-grid-item(4, 1)
+
+li.grid-item:nth-child(3n+2)
+	@include zen-grid-item(4, 5)
+
+li.grid-item:nth-child(3n+3)
+	@include zen-grid-item(4, 9)
+
+li.grid-item:last-child
+	display: none
