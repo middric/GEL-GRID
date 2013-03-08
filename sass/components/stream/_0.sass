@@ -1,0 +1,9 @@
+ul
+	padding: 0
+
+li.grid-item
+	display: block
+	@include zen-grid-item(6, 7)
+
+li.grid-item:nth-child(even)
+	@include zen-grid-item(6, 1)

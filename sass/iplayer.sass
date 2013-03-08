@@ -1,0 +1,41 @@
+@import "themes/gel"
+
+@import "components/grid/0"
+@import "components/structure/0"
+@import "components/navigation/0"
+@import "components/programme-finder/0"
+@import "components/recent-activity/0"
+@import "components/stream/0"
+
+@import "components/grid/debug"
+
+@media all and (max-width: 399px)
+	@import "components/grid/1"
+	@import "components/navigation/1"
+	@import "components/programme-finder/1"
+	@import "components/recent-activity/1"
+	@import "components/stream/1"
+
+// Define guttering and fixed margins for Group 2
+@media all and (min-width: 400px) and (max-width: 599px)
+	@import "components/grid/2"
+	@import "components/navigation/2"
+	@import "components/programme-finder/2"
+	@import "components/recent-activity/2"
+	@import "components/stream/2"
+
+// Define guttering and fixed margins for Group 3
+@media all and (min-width: 600px) and (max-width: 1007px)
+	@import "components/grid/3"
+	@import "components/navigation/3"
+	@import "components/programme-finder/3"
+	@import "components/recent-activity/3"
+	@import "components/stream/3"
+
+// Moce to a 24 column grid and define guttering and fixed margins for Group 4
+@media all and (min-width: 1008px)
+	@import "components/grid/4"
+	@import "components/navigation/4"
+	@import "components/programme-finder/4"
+	@import "components/recent-activity/4"
+	@import "components/stream/4"
