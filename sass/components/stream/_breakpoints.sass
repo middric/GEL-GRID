@@ -3,6 +3,10 @@
 		@include zen-clear
 
 @if $breakpoint == 3
+	ul.grid-item
+		@include zen-clear
+	li.grid-item	
+		padding: $gel-margin*2
 	// Item 1, 4, 7, 10, 13, 16
 	li.grid-item:nth-child(3n+1)
 		@include zen-clear
