@@ -1,0 +1,32 @@
+@if $breakpoint == 2
+	$zen-gutter-width: 8px
+	$gel-grid-margin: 16px
+	.grid-item
+		@include zen-grid-item-base
+	#container
+		padding: 0 $gel-grid-margin - ($zen-gutter-width/2)
+
+@if $breakpoint == 3
+	$zen-gutter-width: 16px
+	$gel-grid-margin: 16px
+	.grid-item
+		@include zen-grid-item-base
+	#container
+		padding: 0 $gel-grid-margin - ($zen-gutter-width/2)
+
+@if $breakpoint == 4
+	$zen-column-count: 24
+	$zen-grid-width: 992px
+	$gel-grid-margin: 8px
+	.grid-item
+		@include zen-grid-item-base
+	#container
+		width: $zen-grid-width
+		padding: 0 $gel-grid-margin
+	@for $i from 1 through 23
+		.col-#{$i}
+			display: block
+			@include zen-grid-item(1, $i)
+	.col-24
+		display: block
+		@include zen-grid-item(1, 1, right)
