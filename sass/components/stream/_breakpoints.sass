@@ -23,3 +23,32 @@
 	// Item 19
 	li.grid-item:last-child
 		display: none
+
+@if $breakpoint == 4
+	$stream-item-width = zen-unit-width() * 6
+	#stream
+		@include zen-grid-item(19, 6)
+		overflow-x: scroll
+	ul.grid-item
+		@include zen-grid-item(19, 1)
+		width: auto
+		height: 292px
+		white-space: nowrap
+		margin-left: $stream-item-width
+		li.grid-item
+			display: inline-block
+			width: $stream-item-width
+			margin: 0
+			margin-left: $stream-item-width * -1
+			padding: $gel-margin*2
+		li.grid-item:nth-child(even)
+			position: relative
+			top: 146px
+			left: $stream-item-width * -1
+			margin-left: 0
+		li.grid-item:nth-child(1), li.grid-item:nth-child(2)
+			position: static
+			.inner
+				height: 260px - ($gel-padding)
+		li.grid-item:last-child
+			display: none
