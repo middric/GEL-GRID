@@ -26,22 +26,23 @@
 
 @if $breakpoint == 4
 	$num-columns: 12
-	$stream-item-width: zen-unit-width() * 6
+	$stream-item-column-width: 6
 	$stream-item-height: 150px
 	$stream-item-padding: ($gel-padding * 2) + ($gel-margin * 2)
+	$stream-item-width: zen-unit-width() * $stream-item-column-width
 	#stream
-		@include zen-grid-item(19, 6)
+		@include zen-grid-item(19, 1, right)
 		overflow-x: scroll
 	ul.grid-item
-		@include zen-grid-item(zen-unit-width() * $num-columns, 1)
+		@include zen-grid-item($stream-item-column-width * $num-columns, 1)
 		height: $stream-item-height * 2 $gel-grid-margin
 		@for $i from 0 through 18
 			.stream-#{$i+1}
 				float: left
-				width: zen-unit-width() * 6
+				width: zen-unit-width() * $stream-item-column-width
 				margin: 0
 				&.bottom
-					margin-left: zen-unit-width() * -6
+					margin-left: zen-unit-width() * ($stream-item-column-width * -1)
 					position: relative
 					top: $stream-item-height + $gel-grid-margin
 

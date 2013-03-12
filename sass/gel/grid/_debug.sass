@@ -1,6 +1,6 @@
 // Iterate over each column and set their positions
 .col-1
-	@include zen-clear
+	@include zen-clear(both)
 @for $i from 1 through 12
 	.col-#{$i}
 		@include zen-grid-item(1, $i)
