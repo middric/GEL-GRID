@@ -1,27 +1,31 @@
 @if $breakpoint == 2
-	$zen-gutter-width: 8px
-	$gel-grid-margin: 16px
+	$gel-gutter: 8px
+	$gel-padding: $gel-gutter/2
+	$zen-gutter-width: $gel-gutter
+	$gel-grid-margin: $gel-gutter *2
 	.grid-item, .stream-item
 		@include zen-grid-item-base
 	#container
 		padding: 0 $gel-grid-margin - ($zen-gutter-width/2)
 
 @if $breakpoint == 3
-	$zen-gutter-width: 16px
-	$gel-grid-margin: 16px
+	$gel-gutter: 16px
+	$gel-padding: $gel-gutter/2
+	$zen-gutter-width: $gel-gutter
+	$gel-grid-margin: $gel-gutter
 	.grid-item, .stream-item
 		@include zen-grid-item-base
 	#container
 		padding: 0 $gel-grid-margin - ($zen-gutter-width/2)
 
 @if $breakpoint == 4
+	$gel-gutter: 16px
+	$gel-padding: $gel-gutter/2
 	$zen-column-count: 24
 	$zen-grid-width: 992px
-	$gel-grid-margin: 8px
+	$gel-grid-margin: $gel-padding
 	.grid-item, .stream-item
 		@include zen-grid-item-base
-	.stream-item
-		padding: $gel-grid-margin
 	#container
 		width: $zen-grid-width
 		padding: 0 $gel-grid-margin

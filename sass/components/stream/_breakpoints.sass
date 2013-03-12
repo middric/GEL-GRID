@@ -6,7 +6,7 @@
 
 @if $breakpoint == 3
 	.stream-item	
-		padding: $gel-margin*2
+		padding: $gel-padding
 	// Item 1, 4, 7, 10, 13, 16
 	.stream-item:nth-child(3n+1)
 		@include zen-grid-item(4, 9)
@@ -28,7 +28,7 @@
 	$num-columns: 12
 	$stream-item-column-width: 6
 	$stream-item-height: 150px
-	$stream-item-padding: ($gel-padding * 2) + ($gel-margin * 2)
+	$stream-item-padding: $gel-gutter
 	$stream-item-width: zen-unit-width() * $stream-item-column-width
 	#stream
 		@include zen-grid-item(19, 1, right)
@@ -44,18 +44,20 @@
 				&.bottom
 					margin-left: zen-unit-width() * ($stream-item-column-width * -1)
 					position: relative
-					top: $stream-item-height + $gel-grid-margin
+					top: $stream-item-height + $gel-gutter
 
 		.stream-item
 			list-style: none
+			padding: $gel-padding
 			&:first-child,
 			&:last-child
 				display: none
 			.inner
+				padding: $gel-padding
 				height: $stream-item-height - $stream-item-padding
 		.large
 			.inner
-				height: ($stream-item-height * 2) + $gel-grid-margin - $stream-item-padding
+				height: ($stream-item-height * 2) + $gel-gutter - $stream-item-padding
 
 
 
