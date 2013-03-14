@@ -27,15 +27,27 @@
 @if $breakpoint == 4
 	$num-columns: 12
 	$stream-item-column-width: 6
+	$stream-buffer: 5
 	$stream-item-height: 160px
 	$stream-item-padding: $gel-gutter
-	$stream-item-width: zen-unit-width() * $stream-item-column-width
+	$stream-item-width: zen-unit-width($stream-item-column-width) 
+	body
+		overflow-x: hidden
+	#stream-outer
+		@include zen-grid-item(24, 6)
+		position: relative
+	#overflow-gradient
+		@include zen-grid-item($stream-item-column-width - 1, 1)
+		margin: 0
+		height: ($stream-item-height * 2) + ($gel-padding * 4)
+		@include background-image(linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1)))
+		position: absolute
+		top: 0
+		right: 0
 	#stream
-		@include zen-grid-item(19, 1, right)
 		overflow-x: scroll
 	ul.grid-item
-		@include zen-grid-item($stream-item-column-width * $num-columns, 1)
-		height: $stream-item-height * 2 $gel-grid-margin
+		@include zen-grid-item(($stream-item-column-width * $num-columns) + $stream-buffer, 1)
 		@for $i from 0 through 18
 			.stream-#{$i+1}
 				float: left
