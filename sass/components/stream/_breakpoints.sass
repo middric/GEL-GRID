@@ -1,34 +1,43 @@
 @if $breakpoint == 1 or $breakpoint == 2
-	ul.grid-item
-		@include zen-clear
-	.stream-item:nth-child(odd)
-		@include zen-clear
+	#stream
+		.grid-item
+			@include zen-clear
+		.stream-item:nth-child(odd)
+			@include zen-clear
 
 @if $breakpoint == 3
-	.stream-item	
-		padding: $gel-padding
-	// Item 1, 4, 7, 10, 13, 16
-	.stream-item:nth-child(3n+1)
-		@include zen-grid-item(4, 9)
+	#stream
+		.stream-item	
+			padding: $gel-padding
+		// Item 1, 4, 7, 10, 13, 16
+		.stream-item:nth-child(3n+1)
+			@include zen-grid-item(4, 9)
 
-	// Item 2, 5, 8, 11, 14, 17
-	.stream-item:nth-child(3n+2)
-		@include zen-clear
-		@include zen-grid-item(4, 1)
+		// Item 2, 5, 8, 11, 14, 17
+		.stream-item:nth-child(3n+2)
+			@include zen-clear
+			@include zen-grid-item(4, 1)
 
-	// Item 3, 6, 9, 12, 15, 18
-	.stream-item:nth-child(3n+3)
-		@include zen-grid-item(4, 5)
+		// Item 3, 6, 9, 12, 15, 18
+		.stream-item:nth-child(3n+3)
+			@include zen-grid-item(4, 5)
 
-	// Item 19
-	.stream-item:last-child
-		display: none
+		// Item 19
+		.stream-item:last-child
+			display: none
+
+		.inner
+			min-height: 280px
+
+		.large
+			.info
+				height: 280px
 
 @if $breakpoint == 4
 	$num-columns: 12
 	$stream-item-column-width: 6
 	$stream-buffer: 5
-	$stream-item-height: 160px
+	$stream-item-height: 234px
 	$stream-item-padding: $gel-gutter
 	$stream-item-width: zen-unit-width($stream-item-column-width) 
 	body
@@ -40,36 +49,37 @@
 		@include zen-grid-item($stream-item-column-width - 1, 1)
 		margin: 0
 		height: ($stream-item-height * 2) + ($gel-padding * 4)
-		@include background-image(linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1)))
 		position: absolute
 		top: 0
 		right: 0
 	#stream
 		overflow-x: scroll
-	ul.grid-item
-		@include zen-grid-item(($stream-item-column-width * $num-columns) + $stream-buffer, 1)
-		@for $i from 0 through 18
-			.stream-#{$i+1}
-				float: left
-				width: zen-unit-width() * $stream-item-column-width
-				margin: 0
-				&.bottom
-					margin-left: zen-unit-width() * ($stream-item-column-width * -1)
-					position: relative
-					top: $stream-item-height + $gel-gutter
+		.grid-item
+			@include zen-grid-item(($stream-item-column-width * $num-columns) + $stream-buffer, 1)
+			@for $i from 0 through 18
+				.stream-#{$i+1}
+					float: left
+					width: zen-unit-width() * $stream-item-column-width
+					margin: 0
+					&.bottom
+						margin-left: zen-unit-width() * ($stream-item-column-width * -1)
+						position: relative
+						top: $stream-item-height + $gel-gutter
 
-		.stream-item
-			list-style: none
-			padding: $gel-padding
-			&:first-child,
-			&:last-child
-				display: none
-			.inner
+			.stream-item
+				list-style: none
 				padding: $gel-padding
-				height: $stream-item-height - $stream-item-padding
-		.large
-			.inner
-				height: ($stream-item-height * 2) + $gel-gutter - $stream-item-padding
+				&:first-child,
+				&:last-child
+					display: none
+				.inner
+					min-height: 0
+					height: $stream-item-height
+			.large
+				.inner
+					height: ($stream-item-height * 2) + $gel-gutter
+				.info
+					height: 477px
 
 
 

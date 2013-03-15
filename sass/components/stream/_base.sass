@@ -11,12 +11,41 @@ ul.grid-item
 	@include zen-grid-item(6, 1)
 	.inner
 		background: $grid-item-color
-		padding: $gel-padding
-		height: 130px - ($gel-padding*2)
+		//height: 130px
 
 .stream-item:nth-child(even)
 	@include zen-grid-item(6, 7)
 
 #stream
-	.small-header
-		@include leader(0)
+	.inner
+		position: relative
+		min-height: 261px
+	.info
+		padding: 0 $gel-padding*2
+		overflow: hidden
+	.header
+		@include leader(1)
+	img
+		width: 100%
+	.large
+		.inner
+			overflow: hidden
+		.small-header
+			background: rgba(255, 255, 255, 0.75)
+			position: absolute
+			top: 0
+			left: 0
+			@include leader(0)
+			padding: $gel-padding
+		img
+			position: absolute
+			top: 0
+			left: 0
+			height: 100%
+			width: auto
+		.info
+			position: relative
+			height: 261px
+		.header
+			position: absolute
+			bottom: 0
